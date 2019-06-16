@@ -12,11 +12,12 @@ def get_reference_encryption(data: bytes, key: bytes):
 
 
 if __name__ == '__main__':
-    key = int('1145141919810AAA', 16)
+    key = input('Encryption key:')
+    key = int(key, 16)
     print(f'Pre-configured encryption key:\t{hex(key)}')
     derived_keys = list(key_derive(key))
 
-    data = 'Nekomimi Channel Official 🍪'
+    data = input('Source text:')
     print(f'Source text:\t{data}')
     data = data.encode('utf-8')
     print(f'Encoded UTF-8:\t{"".join([hex(i)[-2:] for i in data])}')
